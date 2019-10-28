@@ -1,4 +1,4 @@
-<% include header%>
+<!-- <% include header%>
 
 <body>
         <h1 class=" text-center py-4" style="font-size: 4.5em">todos</h1>
@@ -31,3 +31,37 @@
 </body>
 
 <% include footer%>
+ -->
+
+
+<body>
+        <div class="container jumbotron">
+                <h1 class=" text-center py-4" style="font-size: 4.5em">todos</h1>
+                <ul class="list-group">
+                        <li class="list-group-item text-muted input">
+                                <form action="/post" method="POST">
+                                        <input type="text" name="input"
+                                                class="input w-100 w-100 h-auto text-center text-monospace"
+                                                placeholder="Enter the to-do things here">
+                                </form>
+                        </li>
+                        <%task.forEach(function(tasks){%>
+                        <li id="<%=tasks._id%>" name="inputvalue" class="list-group-item text-muted test">
+                                <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                        <input type="checkbox" name="check" id="<%=tasks._id%>"
+                                                                class="complete" value="<%=tasks.name%>"> </div>
+                                        </div>
+                                        <input type="text" id="<%=tasks._id%>" name="update" class="update form-control"
+                                                value="<%=tasks.name%>">
+                                        <div class="input-group-append">
+                                                <button class="input-group-text remove"
+                                                        data-id="<%=tasks._id%>">delete</button> </div>
+                                </div>
+                        </li>
+        </div>
+        <%})%>
+        </ul>
+        </div>
+</body>
