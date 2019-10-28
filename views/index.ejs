@@ -1,44 +1,10 @@
-<!-- <% include header%>
-
-<body>
-        <h1 class=" text-center py-4" style="font-size: 4.5em">todos</h1>
-        <div class="container">
-                <div class="card ">
-                        <form action="/post" method="POST">
-                                <input type="text" name="input" class="input h-auto w-100"
-                                        placeholder="Enter the to-do things here">
-                        </form>
-                        <ul class="list-group">
-                                <%task.forEach(function(tasks){%>
-                                <div class="d-flex flex-row">
-
-                                        <li id="<%=tasks._id%>" name="inputvalue"
-                                                class="list-group-item w-100 list-group-item d-flex justify-content-between align-items-center">
-                                                <input type="checkbox" name="check" id="<%=tasks._id%>" class="complete"
-                                                        value="<%=tasks.name%>">
-                                                <input type="text" id="<%=tasks._id%>" name="update" class="update"
-                                                        value="<%=tasks.name%>">
-                                                <button class="btn btn-link remove"
-                                                        data-id="<%=tasks._id%>">delete</button>
-                                        </li>
-                                </div>
-
-                                <%})%>
-                        </ul>
-                </div>
-
-        </div>
-</body>
-
-<% include footer%>
- -->
-
+<% include header %>
 
 <body>
         <div class="container jumbotron">
                 <h1 class=" text-center py-4" style="font-size: 4.5em">todos</h1>
                 <ul class="list-group">
-                        <li class="list-group-item text-muted input">
+                        <li class="list-group-item text-muted input1">
                                 <form action="/post" method="POST">
                                         <input type="text" name="input"
                                                 class="input w-100 w-100 h-auto text-center text-monospace"
@@ -56,12 +22,12 @@
                                         <input type="text" id="<%=tasks._id%>" name="update" class="update form-control"
                                                 value="<%=tasks.name%>">
                                         <div class="input-group-append">
-                                                <button class="input-group-text remove"
+                                                <button class="  btn btn-outline-danger input-group-text remove"
                                                         data-id="<%=tasks._id%>">delete</button> </div>
                                 </div>
-                        </li>
-        </div>
+                        </li>   
         <%})%>
         </ul>
         </div>
 </body>
+<% include footer %>
